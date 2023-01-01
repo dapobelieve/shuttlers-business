@@ -22,8 +22,36 @@ export default {
     ],
   },
   css: [],
-  plugins: [],
-  components: true,
+  plugins: [
+    {
+      src: "~/plugins/datepicker.js",
+      mode: "client",
+    },
+    {
+      src: "~/plugins/vue-select.js",
+      mode: "client",
+    },
+    {
+      src: "~/plugins/vue-tel-input.js",
+      mode: "client",
+    },
+    {
+      src: "~/plugins/vuelidate.js",
+      mode: "client",
+    },
+  ],
+  components: [
+    "~/components",
+    {
+      path: "~/components/auth",
+    },
+    {
+      path: "~/components/common",
+    },
+    {
+      path: "~/components/forms",
+    },
+  ],
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     // '@nuxtjs/eslint-module',
@@ -40,9 +68,7 @@ export default {
       },
     },
     babel: {
-      plugins: [
-        ["@babel/plugin-proposal-private-property-in-object", { loose: true }],
-      ],
+      plugins: [["@babel/plugin-proposal-private-property-in-object", { loose: true }]],
     },
   },
 };
