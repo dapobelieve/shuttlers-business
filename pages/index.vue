@@ -63,7 +63,7 @@
                   >
                     <span>Work Shifts</span>
                   </button>
-                  <div ref="indicator" class="indicator top-0 h-10 rounded -left-0 w-[2px] absolute bg-green-700"></div>
+                  <div ref="indicator" class="indicator top-0 h-10 hidden md:block rounded -left-0 w-[2px] absolute bg-green-700"></div>
                 </div>
               </div>
             </div>
@@ -95,7 +95,6 @@ export default {
   data() {
     return {
       menu: 1,
-      offsetHeight: 0,
     };
   },
   watch: {
