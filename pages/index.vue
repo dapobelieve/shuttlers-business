@@ -17,9 +17,10 @@
                 <hr />
               </div>
               <div class="w-full select-none mb-6">
-                <div class="w-full flex md:block overflow-x-auto relative" @click.stop="switchMenu" role="">
+                <div class="w-full flex md:block overflow-x-auto relative" @click.stop role="">
                   <button
                     ref="tab-1"
+                    @click="menu = 1"
                     role="tab"
                     :class="[menu == 1 ? 'active' : '']"
                     class="md:h-11 px-10 text-left transition-all ease-in-out duration-150 border-gray-300 items-center bg-transparent w-full md:border-l-2 rounded-tl-sm block"
@@ -28,6 +29,7 @@
                   </button>
                   <button
                     ref="tab-2"
+                    @click="menu = 2"
                     role="tab"
                     :class="[menu == 2 ? 'active' : '']"
                     class="md:h-11 px-10 text-left border-gray-300 items-center bg-transparent w-full md:border-l-2 block"
@@ -36,6 +38,7 @@
                   </button>
                   <button
                     ref="tab-3"
+                    @click="menu = 3"
                     role="tab"
                     :class="[menu == 3 ? 'active' : '']"
                     class="md:h-11 px-10 text-left border-gray-300 items-center bg-transparent w-full md:border-l-2 block"
@@ -44,6 +47,7 @@
                   </button>
                   <button
                     ref="tab-4"
+                    @click="menu = 4"
                     role="tab"
                     :class="[menu == 4 ? 'active' : '']"
                     class="md:h-11 px-10 text-left border-gray-300 items-center bg-transparent w-full md:border-l-2 block"
@@ -52,6 +56,7 @@
                   </button>
                   <button
                     ref="tab-5"
+                    @click="menu = 5"
                     role="tab"
                     :class="[menu == 5 ? 'active' : '']"
                     class="rounded-b-sm md:h-11 px-10 text-left border-gray-300 items-center bg-transparent w-full md:border-l-2 block"
@@ -89,21 +94,25 @@
 export default {
   data() {
     return {
-      menu: 2,
+      menu: 1,
       offsetHeight: 0,
     };
   },
-  watch() {
-    // menu;
+  watch: {
+    menu: {
+      handler(val) {
+        const el = this.$refs[`tab-${val}`];
+        const indicator = this.$refs.indicator;
+        const offsetHeight = el.offsetHeight + "px";
+        indicator.style.transform = `translateY(calc(${val - 1} * ${offsetHeight}))`;
+        indicator.style.height = offsetHeight;
+      },
+    },
   },
   methods: {
     switchMenu(e) {
       const el = e.target.closest("button");
       if (el) {
-        const indicator = this.$refs.indicator;
-        this.offsetHeight = el.offsetHeight + "px";
-        indicator.style.transform = `translateY(calc(${el.id.split("-")[1] - 1} * ${this.offsetHeight}))`;
-        indicator.style.height = this.offsetHeight;
         this.menu = el.id.split("-")[1];
       }
     },
