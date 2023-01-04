@@ -73,10 +73,10 @@
               <Personal v-if="menu == 1" @complete="menu = 2" />
             </keep-alive>
             <keep-alive>
-              <Business v-if="menu == 2" @complete="menu = 3" @back="menu = 1" />
+              <Business v-if="menu == 2" @complete="menu = 3" @back="menu = --menu" />
             </keep-alive>
             <keep-alive>
-              <Security v-if="menu == 3" @complete="menu = 4" />
+              <Security v-if="menu == 3" @complete="menu = 4" @back="menu = --menu" />
             </keep-alive>
           </div>
         </div>
@@ -94,7 +94,7 @@
 export default {
   data() {
     return {
-      menu: 1,
+      menu: 3,
     };
   },
   watch: {
