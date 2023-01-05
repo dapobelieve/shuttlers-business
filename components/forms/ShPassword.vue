@@ -17,7 +17,7 @@ export default {
 	props: ["value", "placeholder"],
 	data() {
 		return {
-			displayPass: true,
+			displayPass: false,
 		};
 	},
 };

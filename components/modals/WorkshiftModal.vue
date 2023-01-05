@@ -17,16 +17,16 @@
       </div>
       <div class="px-5 pb-4">
         <div class="w-full mb-4">
-          <label class="text-xs font-medium text-gray-500" for="">Name</label>
+          <label class="text-xs font-medium text-gray-500" for="">Start time</label>
           <ShInput placeholder="" v-model="locationName" type="text" class="mt-2" />
         </div>
         <div class="w-full mb-4">
-          <label class="text-xs font-medium text-gray-500" for="">Office Address</label>
+          <label class="text-xs font-medium text-gray-500" for="">Closing time</label>
           <ShInput placeholder="" v-model="locationAdd" type="text" class="mt-2" />
         </div>
         <div class="w-full md:flex mt-10 mb-5">
           <ShButton :disabled="!disabled" @click="submit" class="bg-black-900 px-8 ml-auto w-full rounded-md text-white text-xs font-semibold py-3">
-            Add workshift
+            Add work shift
           </ShButton>
         </div>
       </div>
@@ -38,26 +38,26 @@
 export default {
   data() {
     return {
-      locationName: "",
-      locationAdd: "",
+      openingTime: "",
+      closingTime: "",
     };
   },
   computed: {
     disabled() {
-      return !!(this.locationAdd && this.locationName);
+      return !!(this.closingTime && this.openingTime);
     },
   },
   methods: {
     submit() {
-      if (this.locationAdd && this.locationName) {
-        this.$emit("location-added", { ...this.$data });
+      if (this.openingTime && this.closingTime) {
+        this.$emit("workshift-added", { ...this.$data });
         this.closeModal();
       }
     },
     closeModal() {
-      this.locationAdd = "";
-      this.locationName = "";
-      this.$modal.hide("location-modal");
+      this.openingTime = "";
+      this.closingTime = "";
+      this.$modal.hide("workshift-modal");
     },
   },
 };

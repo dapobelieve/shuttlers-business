@@ -46,7 +46,7 @@
 				<ShSelect class="mt-2" placeholder="Select" />
 			</div>
 		</div>
-		<div class="w-full md:flex mt-4">
+		<div class="w-full flex mt-4">
 			<ShButton @click="$emit('back')" class="bg-white px-8 rounded-md text-black border text-xs font-semibold py-3"> Back </ShButton>
 			<ShButton @click="$emit('complete')" class="bg-black-900 px-8 ml-auto rounded-md text-white text-xs font-semibold py-3"> Continue </ShButton>
 		</div>
