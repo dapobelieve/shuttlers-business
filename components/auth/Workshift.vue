@@ -1,6 +1,6 @@
 <template>
 	<ShCard class="">
-		<h2 class="text-2xl font-medium select-none">Add Office Branches</h2>
+		<h2 class="text-2xl font-medium select-none">Setup work shifts</h2>
 		<div class="my-3">
 			<hr />
 		</div>
@@ -9,14 +9,14 @@
 				<Location class="mb-5" @delete-location="deleteLocation" :key="index" v-for="(location, index) in locations" :location="location" />
 			</div>
 			<div class="flex justify-center">
-				<button @click="$modal.show('location-modal')" class="text-green-700 font-medium">+ Click to add office branch</button>
+				<button @click="$modal.show('workshift-modal')" class="text-green-700 font-medium">+ Click to add work shift</button>
 			</div>
 		</div>
 		<div class="w-full md:flex mt-4">
 			<ShButton @click="$emit('back')" class="bg-white px-8 rounded-md text-black border text-xs font-semibold py-3"> Back </ShButton>
 			<ShButton @click="$emit('complete')" class="bg-black-900 px-8 ml-auto rounded-md text-white text-xs font-semibold py-3"> Continue </ShButton>
 		</div>
-		<LocationModal @location-added="addLocation" />
+		<WorkshiftModal @workshift-added="" />
 	</ShCard>
 </template>
 <script>

@@ -9,7 +9,7 @@
       <main class="container md:max-w-4xl lg:max-w-full 2xl:max-w-7xl w-full mx-auto pt-16">
         <div class="grid md:grid-cols-2 grid-cols-1">
           <div class="md:flex flex-col md:px-0 px-4 items-center">
-            <div class="max-w-lg text-center md:text-left">
+            <div class="max-w-lg md:fixed text-center md:text-left">
               <h1 class="text-2xl font-bold mb-1 leading-10">Get started with Shuttlers for Business</h1>
               <p class="text-lg text-gray-400 mb-1">Provide your business details so we can get the best package for your business.</p>
               <small class="text-gray-400 mb-4">Already have an account? <a class="text-green-700 font-bold" href="#">Login</a> </small>
@@ -81,6 +81,9 @@
             <keep-alive>
               <OfficeBranch v-if="menu == 4" @complete="menu = 5" @back="menu = --menu" />
             </keep-alive>
+            <keep-alive>
+              <Workshift v-if="menu == 5" @complete="showModal" @back="menu = --menu" />
+            </keep-alive>
           </div>
         </div>
       </main>
@@ -91,6 +94,7 @@
         <a href="#" class="text-green-700 font-medium"> Term of Service</a> apply.
       </p>
     </footer>
+    <RegistrationCompleteModal />
   </div>
 </template>
 <script>
@@ -116,6 +120,9 @@ export default {
     },
   },
   methods: {
+    showModal() {
+      this.$modal.show("complete-reg-modal");
+    },
     switchMenu(e) {
       const el = e.target.closest("button");
       if (el) {
