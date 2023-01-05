@@ -35,6 +35,9 @@ export default {
       src: "~/plugins/vue-tel-input.js",
       mode: "client",
     },
+    {
+      src: "~/plugins/timepicker.js",
+    },
     { src: "~plugins/vue-modal.js" },
     {
       src: "~/plugins/vuelidate.js",

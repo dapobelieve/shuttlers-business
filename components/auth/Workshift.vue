@@ -6,7 +6,7 @@
 		</div>
 		<div class="w-full py-6">
 			<div class="mb-4">
-				<Location class="mb-5" @delete-location="deleteLocation" :key="index" v-for="(location, index) in locations" :location="location" />
+				<WorkShifts class="mb-5" @delete-location="deleteLocation" :key="index" v-for="(shift, index) in shifts" :location="shift" />
 			</div>
 			<div class="flex justify-center">
 				<button @click="$modal.show('workshift-modal')" class="text-green-700 font-medium">+ Click to add work shift</button>
@@ -23,16 +23,19 @@
 export default {
 	data() {
 		return {
-			locations: [],
+			shifts: [],
 		};
 	},
+	mounted() {
+		this.$modal.show("workshift-modal");
+	},
 	methods: {
-		addLocation(data) {
-			this.locations.push(data);
+		addWorkshift(data) {
+			this.shifts.push(data);
 		},
 		deleteLocation(data) {
 			console.log("deleting...");
-			this.locations.splice(this.locations.indexOf(data), 1);
+			this.shifts.splice(this.shifts.indexOf(data), 1);
 		},
 	},
 };

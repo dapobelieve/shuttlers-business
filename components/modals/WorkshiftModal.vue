@@ -18,11 +18,11 @@
       <div class="px-5 pb-4">
         <div class="w-full mb-4">
           <label class="text-xs font-medium text-gray-500" for="">Start time</label>
-          <ShInput placeholder="" v-model="locationName" type="text" class="mt-2" />
+          <time-picker class="mt-2" v-model="openingTime" format="hh:mm A"></time-picker>
         </div>
         <div class="w-full mb-4">
           <label class="text-xs font-medium text-gray-500" for="">Closing time</label>
-          <ShInput placeholder="" v-model="locationAdd" type="text" class="mt-2" />
+          <time-picker class="mt-2" v-model="closingTime" format="hh:mm A"></time-picker>
         </div>
         <div class="w-full md:flex mt-10 mb-5">
           <ShButton :disabled="!disabled" @click="submit" class="bg-black-900 px-8 ml-auto w-full rounded-md text-white text-xs font-semibold py-3">

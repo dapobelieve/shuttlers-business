@@ -6,3 +6,21 @@
     border-radius: 0 !important;
   }
 }
+.vue__time-picker {
+  width: 100% !important;
+  height: 2.5rem;
+  input {
+    border-radius: 6px;
+    border: 1px solid #ff9311;
+    height: 2.5rem !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    &:focus-visible {
+      outline: none;
+      border: 1px solid #ff9311;
+    }
+  }
+}
