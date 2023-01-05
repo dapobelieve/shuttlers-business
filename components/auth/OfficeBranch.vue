@@ -17,6 +17,7 @@
 			<ShButton @click="$emit('complete')" class="bg-black-900 px-8 ml-auto rounded-md text-white text-xs font-semibold py-3"> Continue </ShButton>
 		</div>
 		<LocationModal @location-added="addLocation" />
+		<RegistrationCompleteModal />
 	</ShCard>
 </template>
 <script>
@@ -34,6 +35,9 @@ export default {
 			console.log("deleting...");
 			this.locations.splice(this.locations.indexOf(data), 1);
 		},
+	},
+	mounted() {
+		this.$modal.show("complete-reg-modal");
 	},
 };
 </script>
