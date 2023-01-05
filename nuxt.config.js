@@ -21,7 +21,7 @@ export default {
       },
     ],
   },
-  css: [],
+  css: ["@/assets/css/app.scss"],
   plugins: [
     {
       src: "~/plugins/datepicker.js",
@@ -35,6 +35,7 @@ export default {
       src: "~/plugins/vue-tel-input.js",
       mode: "client",
     },
+    { src: "~plugins/vue-modal.js" },
     {
       src: "~/plugins/vuelidate.js",
       mode: "client",
@@ -50,6 +51,9 @@ export default {
     },
     {
       path: "~/components/forms",
+    },
+    {
+      path: "~/components/modals",
     },
   ],
   buildModules: [

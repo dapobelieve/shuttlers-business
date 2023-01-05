@@ -78,6 +78,9 @@
             <keep-alive>
               <Security v-if="menu == 3" @complete="menu = 4" @back="menu = --menu" />
             </keep-alive>
+            <keep-alive>
+              <OfficeBranch v-if="menu == 4" @complete="menu = 5" @back="menu = --menu" />
+            </keep-alive>
           </div>
         </div>
       </main>
@@ -94,17 +97,21 @@
 export default {
   data() {
     return {
-      menu: 3,
+      menu: 1,
     };
   },
   watch: {
     menu: {
+      immediate: true,
       handler(val) {
-        const el = this.$refs[`tab-${val}`];
-        const indicator = this.$refs.indicator;
-        const offsetHeight = el.offsetHeight + "px";
-        indicator.style.transform = `translateY(calc(${val - 1} * ${offsetHeight}))`;
-        indicator.style.height = offsetHeight;
+        this.$nextTick(() => {
+          const el = this.$refs[`tab-${val}`];
+          const indicator = this.$refs.indicator;
+          const offsetHeight = el.offsetHeight + "px";
+          indicator.style.transform = `translateY(calc(${val - 1} * ${offsetHeight}))`;
+          el.scrollIntoView();
+          indicator.style.height = offsetHeight;
+        });
       },
     },
   },
