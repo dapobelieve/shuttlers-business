@@ -101,7 +101,7 @@
 export default {
   data() {
     return {
-      menu: 5,
+      menu: 1,
     };
   },
   watch: {

@@ -27,7 +27,7 @@ export default {
 		};
 	},
 	mounted() {
-		this.$modal.show("workshift-modal");
+		// this.$modal.show("workshift-modal");
 	},
 	methods: {
 		addWorkshift(data) {
