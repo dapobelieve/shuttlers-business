@@ -6,7 +6,7 @@
 		</div>
 		<div class="w-full py-6">
 			<div class="mb-4">
-				<WorkShifts class="mb-5" @delete-location="deleteLocation" :key="index" v-for="(shift, index) in shifts" :location="shift" />
+				<Shift class="mb-5" @delete-shift="deleteShift" :key="index" v-for="(shift, index) in shifts" :shift="shift" />
 			</div>
 			<div class="flex justify-center">
 				<button @click="$modal.show('workshift-modal')" class="text-green-700 font-medium">+ Click to add work shift</button>
@@ -16,7 +16,7 @@
 			<ShButton @click="$emit('back')" class="bg-white px-8 rounded-md text-black border text-xs font-semibold py-3"> Back </ShButton>
 			<ShButton @click="$emit('complete')" class="bg-black-900 px-8 ml-auto rounded-md text-white text-xs font-semibold py-3"> Continue </ShButton>
 		</div>
-		<WorkshiftModal @workshift-added="" />
+		<WorkshiftModal @workshift-added="addWorkshift" />
 	</ShCard>
 </template>
 <script>
@@ -33,8 +33,7 @@ export default {
 		addWorkshift(data) {
 			this.shifts.push(data);
 		},
-		deleteLocation(data) {
-			console.log("deleting...");
+		deleteShift(data) {
 			this.shifts.splice(this.shifts.indexOf(data), 1);
 		},
 	},
