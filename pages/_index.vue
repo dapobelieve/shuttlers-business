@@ -20,8 +20,6 @@
                 <div class="w-full flex md:block overflow-x-auto relative" @click.stop role="">
                   <button
                     ref="tab-1"
-                    @click="menu = 1"
-                    role="tab"
                     :class="[menu == 1 ? 'active' : '']"
                     class="md:h-11 px-10 text-left transition-all ease-in-out duration-150 border-gray-300 items-center bg-transparent w-full md:border-l-2 rounded-tl-sm block"
                   >
@@ -29,8 +27,6 @@
                   </button>
                   <button
                     ref="tab-2"
-                    @click="menu = 2"
-                    role="tab"
                     :class="[menu == 2 ? 'active' : '']"
                     class="md:h-11 px-10 text-left border-gray-300 items-center bg-transparent w-full md:border-l-2 block"
                   >
@@ -38,8 +34,6 @@
                   </button>
                   <button
                     ref="tab-3"
-                    @click="menu = 3"
-                    role="tab"
                     :class="[menu == 3 ? 'active' : '']"
                     class="md:h-11 px-10 text-left border-gray-300 items-center bg-transparent w-full md:border-l-2 block"
                   >
@@ -47,8 +41,6 @@
                   </button>
                   <button
                     ref="tab-4"
-                    @click="menu = 4"
-                    role="tab"
                     :class="[menu == 4 ? 'active' : '']"
                     class="md:h-11 px-10 text-left border-gray-300 items-center bg-transparent w-full md:border-l-2 block"
                   >
@@ -56,8 +48,6 @@
                   </button>
                   <button
                     ref="tab-5"
-                    @click="menu = 5"
-                    role="tab"
                     :class="[menu == 5 ? 'active' : '']"
                     class="rounded-b-sm md:h-11 px-10 text-left border-gray-300 items-center bg-transparent w-full md:border-l-2 block"
                   >
@@ -94,7 +84,6 @@
         <a href="#" class="text-green-700 font-medium"> Term of Service</a> apply.
       </p>
     </footer>
-    <RegistrationCompleteModal />
   </div>
 </template>
 <script>

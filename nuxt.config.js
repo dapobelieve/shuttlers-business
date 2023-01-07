@@ -47,7 +47,7 @@ export default {
   components: [
     "~/components",
     {
-      path: "~/components/auth",
+      path: "~/components/register",
     },
     {
       path: "~/components/common",

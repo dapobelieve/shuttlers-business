@@ -27,7 +27,12 @@
 			</div>
 		</div>
 		<div class="w-full flex mt-4">
-			<ShButton @click="$emit('complete')" class="bg-black-900 px-8 ml-auto rounded-md text-white text-xs font-semibold py-3"> Continue </ShButton>
+			<ShButton
+				@click="$router.push({ name: 'register-business' })"
+				class="bg-black-900 px-8 ml-auto rounded-md text-white text-xs font-semibold py-3"
+			>
+				Continue
+			</ShButton>
 		</div>
 	</ShCard>
 </template>
