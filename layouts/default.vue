@@ -6,6 +6,6 @@
 <style lang="scss">
 body {
   font-family: "Heebo", sans-serif;
-  background: #dfe0df;
+  background: #f7f7f8;
 }
 </style>

@@ -2,7 +2,7 @@
 	<div class="location">
 		<small class="font-medium text-gray-500">{{ location.locationName }}</small>
 		<div class="flex items-center rounded-lg px-3 py-2 border">
-			<div class="whitespace-nowrap md:max-w-lg w-[12rem] md:w-full overflow-hidden">
+			<div class="whitespace-nowrap md:max-w-lg w-[12rem] overflow-hidden">
 				<p class="font-medium">{{ location.locationAdd }}</p>
 			</div>
 			<div class="ml-auto shrink-0 mt-1">
