@@ -1,3 +1,3 @@
 # Shutllers for Business
 
-[link](https://shutllers-business.netlify.app/)
+[link](https://shutllers-business.netlify.app/register/personal/)
